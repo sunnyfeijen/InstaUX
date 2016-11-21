@@ -21,14 +21,25 @@ a:hover{
   cursor: pointer;
 }
 
-i{
+.likebtn{
   font-size: 1.5em !important;
   margin: 0 15px 15px;
   color: #8c8c8c;
 }
 
-i:hover{
+.likebtn:hover{
   color: #c6c6c6;
+  cursor: pointer;
+}
+
+.likedbtn{
+  font-size: 1.5em !important;
+  margin: 0 15px 15px;
+  color: red;
+}
+
+.likedbtn:hover{
+  cursor: pointer;
 }
 
 p{
@@ -52,6 +63,22 @@ article{
   border: 1px solid #ededed;
   overflow: hidden;
   margin-bottom: 5vh;
+  position: relative;
+}
+
+.heart{
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  display: none;
+}
+
+.heart i{
+  position: relative;
+  left: -50%;
+  display: block;
+  font-size: 18em !important;
+  color: #fff;
 }
 
 .title{
@@ -98,8 +125,4 @@ article{
 
 .hashtag{
   color: #003569;
-}
-
-.likebtn:hover{
-  cursor: pointer;
 }
