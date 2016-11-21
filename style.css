@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+a{
+  color: #3a4ed5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+i{
+  font-size: 1.5em !important;
+  margin: 0 15px 15px;
+  color: #8c8c8c;
+}
+
+i:hover{
+  color: #c6c6c6;
+}
+
+p{
+  color: #1c1c1c;
+  margin: 0 0 1.5em;
+}
+
+body{
+  background-color: #fafafa;
+}
+
+.container{
+  width: 600px;
+  padding-top: 5vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+article{
+  background-color: #fff;
+  border: 1px solid #ededed;
+  overflow: hidden;
+  margin-bottom: 5vh;
+}
+
+.title{
+  margin: 10px 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.title li{
+  list-style-type: none;
+  float: left;
+  margin-left: 15px;
+  font-weight: 600;
+}
+
+.profilepic{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.patrick{
+  background-image: url("img/1.jpg");
+  background-size: cover;
+}
+
+#image{
+  width: 100%;
+}
+
+.desc{
+  margin: 10px 15px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.name{
+  font-weight: 600;
+}
+
+.hashtag{
+  color: #003569;
+}
+
+.likebtn:hover{
+  cursor: pointer;
+}
