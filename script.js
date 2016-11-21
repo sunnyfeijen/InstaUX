@@ -1,40 +1,13 @@
 $(document).ready(function() {
 
-// check elements visible on screen //
-$.fn.isOnScreen = function(){
-
-    var win = $(window);
-
-    var viewport = {
-        top : win.scrollTop(),
-        left : win.scrollLeft()
-    };
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
-
-    var bounds = this.offset();
-    bounds.right = bounds.left + this.outerWidth();
-    bounds.bottom = bounds.top + this.outerHeight();
-
-    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
-};
-
-if ($('.hearticon').isOnScreen()) {
-  console.log("on screen");
-  $('.hearticon').parent().addClass("aaa");
-}
-
-$('article').click(function(){
-    alert($('.hearticon').isOnScreen());
-});
-////////////////////////////////
-
-
 var liked = false;
+var numLikes;
 
   $(".likebtn").click(function(){
-      $(".numlikes").html("3");
+      numLikes = $(this).parent().parent().find('.numlikes').html();
+      numLikes++;
+      $(this).parent().parent().find('.numlikes').html(numLikes);
+      $(this).parent().addClass("liked");
       showHeart();
       liked = true;
   });
@@ -44,7 +17,8 @@ var liked = false;
     if(liked){
     }
     else{
-      $(".likedbtn").show();
+      $(".liked").children(".likedbtn").show();
+      // $(".likedbtn").show();
       $(".heart").fadeIn("fast");
       $(".heart").fadeOut("fast");
     }

@@ -118,6 +118,11 @@ article{
   background-size: cover;
 }
 
+.paul{
+  background-image: url("img/6.jpg");
+  background-size: cover;
+}
+
 #image{
   width: 100%;
 }
@@ -136,4 +141,8 @@ article{
 
 .hashtag{
   color: #003569;
+}
+
+.hashtag:hover{
+  cursor: pointer;
 }
