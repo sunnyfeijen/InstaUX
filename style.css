@@ -21,10 +21,18 @@ a:hover{
   cursor: pointer;
 }
 
+.hearticon{
+  margin: 0 15px 15px;
+  height: 1.5em;
+  position: relative;
+}
+
 .likebtn{
   font-size: 1.5em !important;
-  margin: 0 15px 15px;
   color: #8c8c8c;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .likebtn:hover{
@@ -34,8 +42,11 @@ a:hover{
 
 .likedbtn{
   font-size: 1.5em !important;
-  margin: 0 15px 15px;
   color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
 .likedbtn:hover{

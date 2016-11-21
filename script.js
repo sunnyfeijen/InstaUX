@@ -6,39 +6,29 @@ var liked = false;
       $(".numlikes").html("3");
       showHeart();
       liked = true;
-      console.log("1"+liked);
   });
 
-// show heart //
+// show heart when icon pressed //
   function showHeart(){
     if(liked){
 
     }
     else{
-      document.getElementById("change").className = "fa fa-heart likedbtn";
+      $(".likedbtn").show();
       $(".heart").fadeIn("fast");
       $(".heart").fadeOut("fast");
     }
   }
 
-  function flashHeart(){
-    $(".fa-heart-o.likebtn").removeClass("fa-heart-o likebtn").addClass("fa-heart likedbtn");
-    console.log("flash");
-  }
-
 
 // set time to like post //
-  setTimeout(init, 5000);
-
+  setTimeout(init, 1000);
 
 // check if post is liked under 5 sec //
   function init(){
     if(liked){
-      console.log("liked");
     }
     else{
-      console.log("init: not liked");
-      // shake();
       flashHeart();
     }
   }
@@ -47,39 +37,42 @@ var liked = false;
 // check if post is liked between functions //
   function checkLiked(nextFunction){
     if(liked){
-      console.log("liked");
     }
     else{
-      console.log("check: not liked");
       nextFunction();
     }
   }
 /////////////////////////////////////////////
 
+// flash heart icon //
+  function flashHeart(){
+    $(".likedbtn").fadeIn(50).delay(100).fadeOut(50);
+    setTimeout(function() {
+      checkLiked(shake);
+    }, 2000)
+  }
+// shake post slightly//
   function shake() {
     console.log("shake");
-    $("#toggle").effect("shake", {times:3, distance:4}, 500);
+    $(".hearticon").effect("shake", {times:3, distance:4}, 500);
     setTimeout(function() {
       checkLiked(shake2);
-    }, 4000)
+    }, 2000)
   }
-
+// shake post heavier//
   function shake2(){
     console.log("shake2");
-    $("#toggle").effect("shake", {times:5, distance:20}, 700);
+    $("#visible").effect("shake", {times:5, distance:20}, 700);
     setTimeout(function() {
       checkLiked(changePic);
     }, 3000)
   }
 
-
+// shake post heavy and change pic//
   function changePic() {
-    $("#toggle").effect("shake", {times:2, distance:40}, 200);
+    $("#visible").effect("shake", {times:2, distance:40}, 200);
     document.getElementById("image").src="img/2.jpg";
-    $("#toggle").effect("shake", {times:2, distance:40}, 200);
+    $("#visible").effect("shake", {times:2, distance:40}, 200);
   }
-
-
-
 
 });
