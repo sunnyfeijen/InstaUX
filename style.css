@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
 
 html, body{
   margin: 0;
@@ -21,10 +22,54 @@ a:hover{
   cursor: pointer;
 }
 
+.popup{
+  background-color: #000;
+  padding: 20px 10px;
+  width: 250px;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -125px;
+  z-index: 9999;
+  display: none;
+  font-size: 2em;
+}
+
+.popup p{
+  margin: 0;
+  color: yellow;
+}
+
+.ja{
+  padding: 5px 19px;
+  font-size: 1em;
+  background-color: yellow;
+  border: 0;
+}
+
+.ja:hover{
+  cursor: pointer;
+  background-color: vanilla;
+}
+
+.nee{
+  background-color: yellow;
+  border: 0;
+}
+
+.bottombar{
+  height: 2em;
+}
+
 .hearticon{
   margin: 0 15px 15px;
   height: 1.5em;
+  width: 1.5em;
+  float: left;
   position: relative;
+  display: inline-block;
+  z-index: 999;
 }
 
 .likebtn{
@@ -33,6 +78,8 @@ a:hover{
   position: absolute;
   top: 0;
   left: 0;
+  transform: scale(1,1);
+  transition: 0.3s;
 }
 
 .likebtn:hover{
@@ -40,17 +87,105 @@ a:hover{
   cursor: pointer;
 }
 
-.likedbtn{
+/*.likedbtn{
   font-size: 1.5em !important;
   color: red;
   position: absolute;
   top: 0;
   left: 0;
   display: none;
+  transform: scale(1,1);
+  transition: 0.3s;
 }
 
 .likedbtn:hover{
   cursor: pointer;
+}*/
+
+.likedbutton{
+  display: none;
+  overflow: visible;
+}
+
+.likedbutton:hover{
+  cursor: pointer;
+}
+
+#rightheart {
+  animation-fill-mode: forwards;
+  transform-origin: 0% 100%;
+  fill: red;
+}
+
+#leftheart {
+  animation-fill-mode: forwards;
+  transform-origin: 100% 100%;
+  fill: red;
+}
+
+.breakright{
+  animation: moveRight 1s alternate;
+}
+
+.breakleft{
+  animation: moveLeft 1s alternate;
+}
+
+@keyframes moveRight {
+ 0% {transform: rotate(0deg);}
+ 100% {transform: rotate(25deg);}
+}
+
+@keyframes moveLeft {
+ 0% {transform: rotate(0deg);}
+ 100% {transform: rotate(-25deg);}
+}
+
+.grow{
+  transform: scale(10,10);
+  transition: 1s;
+}
+
+@-webkit-keyframes wiggle{
+    0% {-webkit-transform: translateX(10px);}
+    50% {-webkit-transform: translateX(0px);}
+    100% {-webkit-transform: translateX(10px);}
+}
+
+.arrow{
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 2.5em;
+  position: absolute;
+  margin: 0;
+  top: -1em;
+  left: -9em;
+  color: #fff;
+  background-color: #000;
+  display: none;
+  -webkit-animation: wiggle 0.4s ease infinite;
+}
+
+.arrow:after {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #000;
+	border-width: 15px;
+	margin-top: -15px;
+}
+
+.comment{
+  float: left;
+  padding: 1px 10px;
+  border: 0;
+  font-size: 1em;
 }
 
 p{
@@ -63,23 +198,24 @@ body{
 }
 
 .console{
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.2em;
   width: 300px;
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 10px;
+  top: 10px;
 }
 
 .container{
   width: 600px;
   padding-top: 5vh;
   margin: 0 auto;
-  overflow: hidden;
+  position: relative;
 }
 
 article{
   background-color: #fff;
   border: 1px solid #ededed;
-  overflow: hidden;
   margin-bottom: 5vh;
   position: relative;
 }
@@ -89,6 +225,13 @@ article{
   left: 50%;
   top: 150px;
   display: none;
+}
+
+.heart svg{
+  width: 100%;
+  position: relative;
+  left: -50%;
+  overflow: visible;
 }
 
 .heart i{
@@ -130,6 +273,16 @@ article{
   background-size: cover;
 }
 
+.sunnytjuh{
+  background-image: url("img/10.jpg");
+  background-size: cover;
+}
+
+.jackson{
+  background-image: url("img/11.jpg");
+  background-size: cover;
+}
+
 .profile{
   background-image: url("img/profile.jpg");
   background-size: cover;
@@ -164,7 +317,22 @@ article{
 }
 
 #videoElement {
-    width: 100%;
+    width: 598px;
     height: 450px;
     background-color: #666;
+    display: none;
+}
+
+#canvas{
+  width: 598px;
+  height: 450px;
+}
+
+.snap{
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }

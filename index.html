@@ -12,6 +12,7 @@
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="script.js"></script>
+    <script src="typed.js"></script>
 
 </head>
 
@@ -23,25 +24,44 @@
 
   <section class="container">
 
+    <div class="popup">
+      <p>
+        Afbeelding downloaden?
+      </p>
+      <button class="ja">ja</button>
+      <button class="nee">nee</button>
+    </div>
 
     <article id="visible" class="you">
       <ul class="title">
         <li class="profilepic profile"></li>
         <li>You</li>
       </ul>
-      <div class="heart"><i class="fa fa-heart"></i></div>
-      <video autoplay="true" id="videoElement">
+      <div class="heart">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+        <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        </svg>
+      </div>
+      <video id="videoElement" autoplay="true"></video>
 
-      </video>
-
-      <ul class="desc">
+      <canvas id="canvas" width="598" height="450"></canvas>
+      <button class="snap"></button>
+      <ul class="desc you">
         <li class="likes"><span class="numlikes">0</span> likes</li>
         <li class="desctitle"><span class="name">You </span> 0 likes hahah <span class="hashtag">#loser</span></li>
       </ul>
-      <div class="hearticon">
-        <i class="fa fa-heart-o likebtn"></i>
-        <i class="fa fa-heart likedbtn"></i>
-      </div>
+      <div class="bottombar">
+        <div class="hearticon">
+          <i class="fa fa-heart-o likebtn you"></i>
+          <svg class="likedbutton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+          <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          </svg>
+          <p class="arrow">Klik hier</p>
+        </div>
+        <input class="comment you" type="text" placeholder="Een reactie toevoegen...">
+    </div>
     </article>
 
     <article id="visible">
@@ -49,17 +69,29 @@
         <li class="profilepic patrick"></li>
         <li>Patrick Bateman</li>
       </ul>
-      <div class="heart"><i class="fa fa-heart"></i></div>
+      <div class="heart">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+        <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        </svg>
+      </div>
       <img id="image" src="img/1.jpg">
 
       <ul class="desc">
         <li class="likes"><span class="numlikes">2</span> likes</li>
         <li class="desctitle"><span class="name">Patrick Bateman </span>reservation for 2 at <span class="hashtag">#dorsia</span></li>
       </ul>
-      <div class="hearticon">
-        <i class="fa fa-heart-o likebtn"></i>
-        <i class="fa fa-heart likedbtn"></i>
-      </div>
+      <div class="bottombar">
+        <div class="hearticon">
+          <i class="fa fa-heart-o likebtn"></i>
+          <svg class="likedbutton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+          <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          </svg>
+          <p class="arrow">Klik hier</p>
+        </div>
+        <input class="comment" type="text" placeholder="Een reactie toevoegen...">
+    </div>
     </article>
 
     <article>
@@ -67,35 +99,90 @@
         <li class="profilepic paul"></li>
         <li>Paul_allen</li>
       </ul>
-      <div class="heart"><i class="fa fa-heart"></i></div>
+      <div class="heart">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+        <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        </svg>
+      </div>
       <img id="image" src="img/7.jpg">
 
       <ul class="desc">
         <li class="likes"><span class="numlikes">103</span> likes</li>
         <li class="desctitle"><span class="name">Paul_allen </span>New card from the printer, what do ya think? <span class="hashtag">#offwhite</span></li>
       </ul>
-      <div class="hearticon">
-        <i class="fa fa-heart-o likebtn"></i>
-        <i class="fa fa-heart likedbtn"></i>
-      </div>
+      <div class="bottombar">
+        <div class="hearticon">
+          <i class="fa fa-heart-o likebtn"></i>
+          <svg class="likedbutton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+          <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          </svg>
+          <p class="arrow">Klik hier</p>
+        </div>
+        <input class="comment" type="text" placeholder="Een reactie toevoegen...">
+    </div>
     </article>
 
     <article>
       <ul class="title">
-        <li class="profilepic patrick"></li>
-        <li>Patrick Bateman</li>
+        <li class="profilepic sunnytjuh"></li>
+        <li>Sunnytjuh</li>
       </ul>
-      <div class="heart"><i class="fa fa-heart"></i></div>
-      <img id="image" src="img/3.jpg">
+      <div class="heart">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+        <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        </svg>
+      </div>
+      <img id="image" src="img/10.jpg">
 
       <ul class="desc">
-        <li class="likes"><span class="numlikes">28</span> likes</li>
-        <li class="desctitle"><span class="name">Patrick Bateman </span>about to return some videotapes <span class="hashtag">#film</span></li>
+        <li class="likes"><span class="numlikes">2</span> likes</li>
+        <li class="desctitle"><span class="name">Sunnytjuh </span>Little young Sunny <span class="hashtag"></span></li>
       </ul>
-      <div class="hearticon">
-        <i class="fa fa-heart-o likebtn"></i>
-        <i class="fa fa-heart likedbtn"></i>
+      <div class="bottombar">
+        <div class="hearticon">
+          <i class="fa fa-heart-o likebtn"></i>
+          <svg class="likedbutton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+          <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          </svg>
+          <p class="arrow">Klik hier</p>
+        </div>
+        <input class="comment" type="text" placeholder="Een reactie toevoegen...">
+    </div>
+    </article>
+
+    <article>
+      <ul class="title">
+        <li class="profilepic jackson"></li>
+        <li>jackson.groves</li>
+      </ul>
+      <div class="heart">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+        <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+        </svg>
       </div>
+      <img id="image" src="img/11.jpg">
+
+      <ul class="desc">
+        <li class="likes"><span class="numlikes">7917</span> likes</li>
+        <li class="desctitle"><span class="name">jackson.groves </span>Go the extra mile, it's never crowded. <span class="hashtag">@jordentually</span></li>
+      </ul>
+      <div class="bottombar">
+        <div class="hearticon">
+          <i class="fa fa-heart-o likebtn"></i>
+          <!-- <i class="fa fa-heart likedbtn"></i> -->
+          <svg class="likedbutton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-43 46 12 10" style="enable-background:new -43 46 12 10;" xml:space="preserve">
+          <path id="rightheart" d="M-37,47.5c0.7-0.9,2.1-1.5,3.3-1.5c2,0,2.7,1.5,2.7,3.4c0,3.3-6,6.6-6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          <path id="leftheart" class="leftheart" d="M-37,47.5c-0.7-0.9-2.1-1.5-3.3-1.5c-2,0-2.7,1.5-2.7,3.4c0,3.3,6,6.6,6,6.6l0-4.9c0,0-2-2.1-2-2.1L-37,47.5z" />
+          </svg>
+          <p class="arrow">Klik hier</p>
+        </div>
+        <input class="comment" type="text" placeholder="Een reactie toevoegen...">
+    </div>
     </article>
 
   </section>
